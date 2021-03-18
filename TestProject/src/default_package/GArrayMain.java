@@ -1,4 +1,4 @@
-package ds_lab3;
+package default_package;
 
 public class GArrayMain {
 	public static void main(String[] args) {

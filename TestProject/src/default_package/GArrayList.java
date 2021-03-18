@@ -1,4 +1,4 @@
-package ds_lab3;
+package default_package;
 
 
 class GArrayList<T> {

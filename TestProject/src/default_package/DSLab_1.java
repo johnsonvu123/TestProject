@@ -7,13 +7,13 @@ public class DSLab_1 {
 		
 		//Problem 1
 		
-		printLeapYear();
+	//	printLeapYear();
 		
 		//Problem 2
 		
-		iterativeFib();
+		//iterativeFib();
 		
-		System.out.println();
+		//System.out.println();
 		
 		printRecursive();
 		
