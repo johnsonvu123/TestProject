@@ -6,7 +6,7 @@ public class GStack<T> {
 	private final int capacity=5; //the default capacity for the array
 	private T[] array=(T[]) new Object[capacity]; //the array that will be in the head link
 	
-	GStack(){ //generic stack constructor/ creates a generic stack
+	public GStack(){ //generic stack constructor/ creates a generic stack
 		this.head=new DLink<T>(array); //initializes the head link with the array
 		this.tail=head; //sets the tail to head
 		this.size=0; //sets the size to 0
@@ -57,7 +57,6 @@ public class GStack<T> {
 			this.size++; //increments the size
 			return true;
 		}
-		
 		this.head.data[this.size++]=value; //sets the value in the available index and increments the size
 		return true;
 	}
@@ -66,17 +65,16 @@ public class GStack<T> {
 	public T pop() {
 		DLink<T> temp;
 		if(this.isEmpty()){ //returns null if the stack is empty
-		      System.out.println("Integer Doubly LinkedList is empty, there is no null for int list so return 0.");
-		      return null;
-		    } else if(this.size>this.capacity) { //executes when the size is greater than the array capacity
-		    	temp=this.tail; //temp is set to the tail link
-			    this.tail= temp.prev; //the tail is set to the previous temp link
-			    this.tail.next=null; //the next tail is set to null
-			    this.size--; //decrement the size
-			    T value=temp.value; //temporary value set to the temp value
-			    return value; //returns the value popped
-		    	
-		    }
+			//System.out.println("Empty");
+		    return null;
+		} else if(this.size>this.capacity) { //executes when the size is greater than the array capacity
+		    temp=this.tail; //temp is set to the tail link
+			this.tail= temp.prev; //the tail is set to the previous temp link
+			this.tail.next=null; //the next tail is set to null
+			this.size--; //decrement the size
+			T value=temp.value; //temporary value set to the temp value
+			return value; //returns the value popped
+		}
 		T tempValue=this.head.data[--size]; //temporary value set to the last value in the array of the head link, decrements the size
 		return tempValue; //returns the value popped
 	}
@@ -90,19 +88,19 @@ public class GStack<T> {
 	}
 	
 	//print function
-	void print() {
-		if(this.size>this.capacity) { //prints the stack when the array is full and has links after the head link
-			for(int i=0;i<5;i++) {
+	public void print() {
+		if(this.size>this.capacity) { //prints the stack when the array is full, and it has links after the head link
+			for(int i=0;i<5;i++) { //prints array items
 				System.out.print(this.head.data[i]+" ");
 			}
-			DLink currLink=this.head.next;
-			while(currLink!=null) {
+			DLink currLink=this.head.next; //current link set to the link after head
+			while(currLink!=null) { //then print links so long as the current link is not null
 				System.out.print(currLink.value+" ");
-				currLink=currLink.next;
+				currLink=currLink.next; //sets the current link to the next link
 			}
 			System.out.println();
 		} else { //otherwise print the array only
-			for(int i=0;i<this.size;i++) {
+			for(int i=0;i<this.size;i++) { //prints array items
 				System.out.print(this.head.data[i]+" ");
 			}
 			System.out.println();

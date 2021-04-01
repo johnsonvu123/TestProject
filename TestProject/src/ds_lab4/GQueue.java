@@ -6,7 +6,7 @@ public class GQueue<T> {
 	private final int capacity=5; //the default capacity for the array
 	private T[] array=(T[]) new Object[capacity]; //the array that will be in the head link
 	
-	GQueue(){ //generic queue constructor/ creates a generic queue
+	public GQueue(){ //generic queue constructor/ creates a generic queue
 		this.head=new DLink<T>(array); //initializes the head link with the array
 		this.tail=head; //sets the tail to head
 		this.size=0; //sets the size to 0
@@ -68,7 +68,6 @@ public class GQueue<T> {
 		DLink<T> temp=this.tail;
 		T tempValue=this.head.data[0];
 		if(this.isEmpty()){ //returns null if the queue is empty
-		      System.out.println("Integer Doubly LinkedList is empty, there is no null for int list so return 0.");
 		      return null;
 		    } else if(this.size<=this.capacity) { //executes when the queue's size is less than or equal to the array capacity
 		    	for(int i=0; i<this.size-1;i++) {
