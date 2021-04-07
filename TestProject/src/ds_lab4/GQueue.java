@@ -103,7 +103,7 @@ public class GQueue<T> {
 	}
 	
 	//print function
-	void print() {
+	public void print() {
 		if(this.size>this.capacity) { //prints the queue when the array is full and has links after the head link
 			for(int i=0;i<5;i++) {
 				System.out.print(this.head.data[i]+" ");
