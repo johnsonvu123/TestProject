@@ -35,6 +35,16 @@ public class MaxHeap {
 		return (2*index)+1;
 	}
 	
+	//returns the size of the heap
+	public int size() {
+		return this.size;
+	}
+	
+	//returns the max of the heap
+	public int max() {
+		return this.capacity;
+	}
+	
 	//returns true or false based on its position of whether it is a Leaf 'node'
 	boolean isLeaf(int index) {
 		if(index>(size/2) && index<=size) {
